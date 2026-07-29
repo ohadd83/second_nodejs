@@ -66,7 +66,7 @@ pipeline {
 
                     docker run -d \
                       --name nodejs-app \
-                      -p 3000:3000 \
+                      -p 8087:3000 \
                       $IMAGE_NAME:$IMAGE_TAG
                 '''
             }
