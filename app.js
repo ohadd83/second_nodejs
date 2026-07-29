@@ -6,7 +6,7 @@ const PORT = process.env.PORT || 3000;
 
 // Home endpoint
 app.get('/', (req, res) => {
-    res.send('Node.js application is running!');
+    res.send('Node.js application is running! date: ${now}');
 });
 
 // Health check endpoint
