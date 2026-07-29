@@ -1,6 +1,20 @@
-const http = require('http');
+const express = require('express');
 
-http.createServer((req, res) => {
-  const now = new Date();
-  res.end(`Hello Jenkins CI/CD lets move on and test the webhook try number 2 -port 3000 test3 date is: - ${now}`);
-}).listen(3000);
+const app = express();
+
+const PORT = process.env.PORT || 3000;
+
+// Home endpoint
+app.get('/', (req, res) => {
+    res.send('Node.js application is running!');
+});
+
+// Health check endpoint
+app.get('/health', (req, res) => {
+    res.status(200).send('OK');
+});
+
+// Start server
+app.listen(PORT, '0.0.0.0', () => {
+    console.log(`Server is running on port ${PORT}`);
+});
